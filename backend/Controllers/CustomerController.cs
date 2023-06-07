@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace backend.Controllers;
 
 [ApiController]
-[Route("[customer/controller]")]
+[Route("[controller]")]
 public class CustomerController : ControllerBase
 {
-    private Customer[] customers;
+    private List<Customer> customers = new List<Customer>();
     private readonly ILogger<CustomerController> _logger;
 
     public CustomerController(ILogger<CustomerController> logger)
@@ -14,19 +14,20 @@ public class CustomerController : ControllerBase
         _logger = logger;
     }
 
-    [HttpPost(Name = "AddCustomer")]
-    public Customer CreateCustomer(Customer customer){
+    [HttpPost(Name = "PostCreateCustomer")]
+    public Customer PostCreateCustomer(Customer customer){
+        Console.WriteLine(customer);
         var newCustomer = new Customer
         {
-            firstName = customer.firstName,
-            lastname = customer.lastname,
-            color = customer.color,
+            fname = customer.fname,
+            lname = customer.lname,
+            favoriteColor = customer.favoriteColor,
             dateOfBirth = customer.dateOfBirth,
-            currentAge = customer.currentAge,
             email = customer.email,
             phone = customer.phone
         };
-        customers.Append(newCustomer);
+        newCustomer.currentAge = DateTime.Now.Year - customer.dateOfBirth.Year;
+        customers.Add(newCustomer);
         return newCustomer;
     }
 }
