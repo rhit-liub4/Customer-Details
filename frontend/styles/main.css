@@ -1,0 +1,12 @@
+
+.split {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+  }
+
+  form, table {
+    flex: 1;
+    margin: 10px;
+  }
