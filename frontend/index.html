@@ -1,9 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    </head>
-    <body>
 
-    </body>
-    <script></script>
+<head>
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Customer details</title>
+    <h1> Welcome to Customer details</h1>
+
+</head>
+
+<body>
+    <div class="split">
+        <div class="left">
+            <form>
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" required><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" required><br><br>
+                <label for="favcolor">Favorite color:</label><br>
+                <select id="favcolor" name="favcolor">Pick your favorite color
+                  <option value="red">Red</option>
+                  <option value="orange">Orange</option>
+                  <option value="yellow">Yellow</option>
+                  <option value="green">Green</option>
+                  <option value="blue">Blue</option>
+                  <option value="purple">Purple</option>
+                </select><br>
+                <label for="dob">Date of Birth:</label><br>
+                <input type="date" id="dob" name="dob" pattern="\d{2}-\d{2}-\d{4}" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="phone">Phone:</label><br>
+                <input type="text" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div class="right">
+            <table id = "myTable" style = "width: 100%"> 
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Color</th>
+                    <th>DOB</th>
+                    <th>Current Age</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+                <tr>
+                    <td>Your</td>
+                    <td>Mom</td>
+                    <td>Turquiose</td>
+                    <td>6/6/66</td>
+                    <td>99</td>
+                    <td>atYourMom@Gmail.com</td>
+                    <td>123-123-1232</td>
+                </tr>
+                
+            </table>
+        </div>
+
+    </div>
+
+
+</body>
+
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/main.js"></script>
+
 </html>
