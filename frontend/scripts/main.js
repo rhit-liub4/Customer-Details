@@ -11,6 +11,9 @@ $(document).ready(function () {
             phone: $("#phone").val(),
         };
 
+        let check = JSON.stringify(formData);
+        
+
         var errors = [];
 
         if (!formData.fname) {
