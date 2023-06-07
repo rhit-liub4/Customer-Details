@@ -1,0 +1,29 @@
+1) create column A for creating a new user
+
+2) create column B for list of users
+
+3) in column A put following information
+    a) firstname
+    b) lastname
+    c) favorite color
+        i) drop menu
+    d) date of birth
+        i) check to see if the date is formatted correctly
+    e) email
+        i) check to see if the email is formatted correctly
+    f) phone
+        i) check to see if the phone is formatted correctly
+
+4) create submit button to put all information on the isde
+
+5) in column B put following information
+    a) first name
+    b) lastname
+    c) color
+        i) put as a colored circle 
+    d) date of birth
+    e) current age
+    f) email
+    g) phone
+    
+6) for each row, put a delete button as an square X
