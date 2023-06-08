@@ -3,10 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-/backend/bin
-/backend/bin/*
-/backend/obj
-/backend/obj/*
+/bin
+/bin/*
+/obj
+/obj/*
 
 # User-specific files
 *.suo
