@@ -6,6 +6,7 @@
 /backend/bin
 /backend/bin/*
 /backend/obj
+/backend/obj/*
 
 # User-specific files
 *.suo
