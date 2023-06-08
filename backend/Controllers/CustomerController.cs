@@ -15,7 +15,7 @@ public class CustomerController : ControllerBase
     }
 
     [HttpPost(Name = "PostCreateCustomer")]
-    public Customer PostCreateCustomer(Customer customer){
+    public ActionResult PostCreateCustomer(Customer customer){
         Console.WriteLine(customer);
         var newCustomer = new Customer
         {
@@ -28,6 +28,6 @@ public class CustomerController : ControllerBase
         };
         newCustomer.currentAge = DateTime.Now.Year - customer.dateOfBirth.Year;
         customers.Add(newCustomer);
-        return newCustomer;
+        return Ok(newCustomer);
     }
 }

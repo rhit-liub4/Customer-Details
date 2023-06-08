@@ -12,7 +12,7 @@ $(document).ready(function () {
         };
 
         let check = JSON.stringify(formData);
-        
+        console.log(check);
 
         var errors = [];
 
@@ -55,7 +55,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "POST",
-            url: "http://localhost:7169/Customer",
+            url: "https://localhost:7169/Customer",
             contentType: "application/json",
             data: JSON.stringify(formData),
             dataType: "json",
