@@ -12,22 +12,39 @@
   margin: 10px;
 }
 
-table,
+
 th,
 td {
   border: 1px solid black;
-  width: fit-content;
+  width:auto;
 }
-th, tr, td:last-child {
+th, tr, td{
   width: 1%;
   white-space: nowrap;
 }
 
+#removeButton{
+  border: 0px;
+  
+}
+.circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+
 .invalid {
   color: red;
-}
 
 
 td {
   text-align: center;
+}
+
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
 }
