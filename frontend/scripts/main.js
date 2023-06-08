@@ -11,6 +11,9 @@ $(document).ready(function () {
             phone: $("#phone").val(),
         };
 
+        let check = JSON.stringify(formData);
+        console.log(check);
+
         var errors = [];
 
         if (!formData.fname) {
@@ -52,10 +55,11 @@ $(document).ready(function () {
 
         $.ajax({
             type: "POST",
-            url: "/",
-            data: formData,
+            url: "https://localhost:7169/Customer",
+            contentType: "application/json",
+            data: JSON.stringify(formData),
             dataType: "json",
-            encode: true,
+            //encode: true,
         }).done(function (data) {
             console.log(data);
         });
