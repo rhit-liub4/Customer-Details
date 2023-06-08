@@ -31,10 +31,12 @@ th, tr, td{
   height: 50px;
   width: 50px;
   border-radius: 50%;
+}
 
 .invalid {
   color: red;
 
+}
 
 td {
   text-align: center;
