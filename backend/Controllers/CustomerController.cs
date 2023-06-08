@@ -6,7 +6,7 @@ namespace backend.Controllers;
 [Route("[controller]")]
 public class CustomerController : ControllerBase
 {
-    private List<Customer> customers = new List<Customer>();
+    private static List<Customer> customers = new List<Customer>();
     private readonly ILogger<CustomerController> _logger;
 
     public CustomerController(ILogger<CustomerController> logger)
@@ -22,12 +22,20 @@ public class CustomerController : ControllerBase
             fname = customer.fname,
             lname = customer.lname,
             favoriteColor = customer.favoriteColor,
-            dateOfBirth = customer.dateOfBirth,
             email = customer.email,
             phone = customer.phone
         };
-        newCustomer.currentAge = DateTime.Now.Year - customer.dateOfBirth.Year;
+        DateTime temp = DateTime.Parse(customer.dateOfBirth);
+        newCustomer.dateOfBirth = temp.ToString("MM/dd/yyyy");
+        newCustomer.currentAge = DateTime.Now.Year -temp.Year;
         customers.Add(newCustomer);
+        Console.WriteLine("Added a Customer! There are now " + customers.Count);
         return Ok(newCustomer);
+    }
+
+    [HttpGet(Name = "GetAllCustomers")]
+    public ActionResult GetAllCustomers(){
+        Console.WriteLine(customers.Count + " customers found");
+        return Ok(customers);
     }
 }

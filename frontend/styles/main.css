@@ -24,8 +24,11 @@ th, tr, td{
 }
 
 #removeButton{
-  border: 0px;
   
+  
+}
+.remove{
+  border: 0px;
 }
 .circle {
   height: 50px;

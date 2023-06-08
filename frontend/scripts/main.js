@@ -40,10 +40,10 @@ $(document).ready(function () {
             for (i = 0; i < errors.length; i++) {
                 var error = errors[i];
                 $('#' + errors[i]).addClass('invalid');
-                console.log(document.getElementById("#" + errors[i]+"L"));
+                console.log(document.getElementById("#" + errors[i] + "L"));
 
-                let target =errors[i]+"L"
-                
+                let target = errors[i] + "L"
+
                 let text = document.getElementById(target).innerText;
 
 
@@ -59,12 +59,41 @@ $(document).ready(function () {
             contentType: "application/json",
             data: JSON.stringify(formData),
             dataType: "json",
+
             //encode: true,
         }).done(function (data) {
+            updateScreen();
             console.log(data);
         });
 
-        
+
         event.stopPropagation();
     });
 });
+
+function updateScreen() {
+    $(document).ready(function () {
+        $.ajax({
+            tupe: "GET",
+            url: "https://localhost:7169/Customer",
+            contentType: "application/json",
+            dataType: "json",
+            success: (function (data) {
+                $.each(data, function (index, item) {
+                    var newRow = "<tr><td>" 
+                        + item.fname + "</td><td>" 
+                        + item.lname + "</td><td>" 
+                        + "<div class='circle' style='background-color: " + item.favoriteColor + "'></div></td><td>"
+                        + item.dateOfBirth + "</td><td>" 
+                        + item.currentAge + "</td><td>" 
+                        + item.email + "</td><td>" 
+                        + item.phone + "</td>" 
+                        + "<td class='remove' id='removeButton" + index + "'><button>X</button></td></tr>";
+                    $("#myTable").append(newRow);
+                });
+            })
+        });       
+    });
+}
+
+updateScreen();

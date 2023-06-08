@@ -1,0 +1,5 @@
+1) GET
+2) Have table update with appropriate values
+3) REMOVE
+4) Have remove button work and update the table
+5) finish
