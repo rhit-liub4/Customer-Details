@@ -18,12 +18,12 @@
                 <input type="text" id="lname" name="lname" required><br><br>
                 <label for="favcolor">Favorite color:</label><br>
                 <select id="favcolor" name="favcolor">Pick your favorite color
-                  <option value="red">Red</option>
-                  <option value="orange">Orange</option>
-                  <option value="yellow">Yellow</option>
-                  <option value="green">Green</option>
-                  <option value="blue">Blue</option>
-                  <option value="purple">Purple</option>
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="purple">Purple</option>
                 </select><br>
                 <label for="dob">Date of Birth:</label><br>
                 <input type="date" id="dob" name="dob" pattern="\d{2}-\d{2}-\d{4}" required><br>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="right">
-            <table id = "myTable" style = "width: 100%"> 
+            <table id="myTable" style="width: 100%">
                 <tr>
                     <th>First name</th>
                     <th>Last name</th>
@@ -49,14 +49,24 @@
                 <tr>
                     <td>Your</td>
                     <td>Mom</td>
-                    <td>Turquiose</td>
+                    <td>
+                        <div class="circle" style="background-color: black"></div>
+                    </td>
+
                     <td>6/6/66</td>
                     <td>99</td>
                     <td>atYourMom@Gmail.com</td>
                     <td>123-123-1232</td>
+                    <td id="removeButton">
+                        <button>
+                            X
+                        </button>
+                    </td>
+
                 </tr>
-                
+
             </table>
+
         </div>
 
     </div>
