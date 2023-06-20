@@ -71,29 +71,52 @@ $(document).ready(function () {
     });
 });
 
+function clearTable() {
+    $('#myTable').empty();
+}
+
+function writeHeader() {
+    var newRow = "<tr id='headerRow'><th>First Name</th><th>Last Name</th><th>Color</th><th>Date of Birth</th><th>Age</th><th>Email</th><th>Phone</th></tr>";
+    $("#myTable").append(newRow);
+}
+
 function updateScreen() {
-    $(document).ready(function () {
-        $.ajax({
-            tupe: "GET",
-            url: "https://localhost:7169/Customer",
-            contentType: "application/json",
-            dataType: "json",
-            success: (function (data) {
-                $.each(data, function (index, item) {
-                    var newRow = "<tr><td>" 
-                        + item.fname + "</td><td>" 
-                        + item.lname + "</td><td>" 
-                        + "<div class='circle' style='background-color: " + item.favoriteColor + "'></div></td><td>"
-                        + item.dateOfBirth + "</td><td>" 
-                        + item.currentAge + "</td><td>" 
-                        + item.email + "</td><td>" 
-                        + item.phone + "</td>" 
-                        + "<td class='remove' id='removeButton" + index + "'><button>X</button></td></tr>";
-                    $("#myTable").append(newRow);
-                });
-            })
-        });       
+    clearTable();
+    writeHeader();
+
+    $.ajax({
+        type: "GET",
+        url: "https://localhost:7169/Customer",
+        contentType: "application/json",
+        dataType: "json",
+        success: (function (data) {
+            $.each(data, function (index, item) {
+                var newRow = "<tr id='dataRow'><td>" +
+                    item.fname + "</td><td>" +
+                    item.lname + "</td><td>" +
+                    "<div class='circle' style='background-color: " + item.favoriteColor + "'></div></td><td>" +
+                    item.dateOfBirth + "</td><td>" +
+                    item.currentAge + "</td><td>" +
+                    item.email + "</td><td>" +
+                    item.phone + "</td>" +
+                    "<td class='remove' id='removeButton' onclick='remove(" + item.id + ")'><button>X</button></td></tr>";
+                $("#myTable").append(newRow);
+            });
+        })
     });
+}
+
+function remove(id) {
+
+    $.ajax({
+        type: "DELETE",
+        url: "https://localhost:7169/Customer/" + id,
+        success: (function (data) {
+            console.log("Deleted");
+            updateScreen();
+        }),
+    });
+
 }
 
 updateScreen();
