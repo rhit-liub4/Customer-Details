@@ -1,1 +1,43 @@
-<p>table works!</p>
+<table id="myTable" style="width: 100%">
+  <tr id="header">
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Color</th>
+    <th>Date of Birth</th>
+    <th>Age</th>
+    <th>Email</th>
+    <th>Phone</th>
+  </tr>
+  
+<tr id='dataRow' *ngFor="let customer of customers">
+  <td>
+    {{customer.fname}}
+  </td>
+  <td>
+    {{customer.lname}}
+  </td>
+  <td>
+    <div class='circle' style='background-color: {{customer.favoriteColor}}'></div>
+  </td>
+  <td>
+    {{customer.dateOfBirth}}
+  </td>
+  <td>
+    {{customer.currentAge}}
+  </td>
+  <td>
+    {{customer.email}}
+  </td>
+  <td>
+    {{customer.phone}}
+  </td>
+  <td class='remove' id='removeButton' (click)= "delete(customer)">
+    <button>
+      X
+    </button>
+  </td>
+</tr>
+  
+
+
+</table>

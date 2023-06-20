@@ -1,0 +1,29 @@
+.label-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.label-input > input {
+    margin-left: 10px;
+    width: 60%;
+}
+
+.label-input > select {
+    margin-left: 10px;
+    width: 60%;
+}
+
+.primary {
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}

@@ -1,1 +1,35 @@
-<p>registration works!</p>
+<h2>Registration</h2>
+<form [formGroup]="regisForm" (submit)="submit()">
+  <div class="label-input">
+    <label for="first-name">First Name:</label>
+    <input id="first-name" type="text" formControlName="fname">
+  </div>
+  <div class="label-input">
+    <label for="last-name">Last Name:</label>
+    <input id="last-name" type="text" formControlName="lname">
+  </div>
+  <div class="label-input">
+    <label for="fav-color">Favorite color:</label>
+    <select id="fav-color" formControlName="favcolor">
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="purple">Purple</option>
+	</select>
+  </div>
+  <div class="label-input">
+    <label for="dob">Date of Birth</label>
+    <input id="dob" type="date" formControlName="dob">
+  </div>
+  <div class="label-input">
+    <label for="email">Email: </label>
+    <input id="email" type="email" formControlName="email">
+  </div>
+  <div class="label-input">
+	<label for="phone">Phone Number</label>
+    <input id="phone" type="text" formControlName="phone">
+  </div>
+  <button type="submit" class="primary">Register</button>
+</form>
